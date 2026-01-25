@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import { BrowserRouter, Routes, Route, Link  } from 'react-router-dom'
-
+import { HomeView, DetailsView, AddRecipeView } from './views'
 
 
 function App() {
-  const [currentView, setCurrentView] = useState("")
+  const [currentView, setCurrentView] = useState("Home")
+  
 
   return (
     <>
-      <BrowserRouter>
-      </BrowserRouter>
+      
     </>
   )
 }
