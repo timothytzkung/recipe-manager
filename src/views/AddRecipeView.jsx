@@ -4,7 +4,11 @@ export const AddRecipeView = () => {
     return (
         <>
         <div>
-            <h1>Add Recipes</h1>
+            <h2>Add Recipes</h2>
+            {/* Form */}
+            <div>
+                
+            </div>
         </div>
         </>
     )
