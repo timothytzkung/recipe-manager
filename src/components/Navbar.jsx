@@ -1,14 +1,13 @@
 
 
-export const Navbar = ( { viewChanger, views }  ) => {
+export const Navbar = ( { setView } ) => {
     
     return (
         <>
         <div className="navbar">
             <h1>Recipe Manager</h1>
-            <button onClick={() => viewChanger(views.Home)}>All Recipes</button>
-            <button onClick={() => viewChanger(views.Details)}>Details</button>
-            <button onClick={() => viewChanger(views.AddRecipe)}>Add Recipe</button>
+            <button onClick={() => setView("Home")}>All Recipes</button>
+            <button onClick={() => setView("AddRecipe")}>Add Recipe</button>
         </div>
         </>
     )
