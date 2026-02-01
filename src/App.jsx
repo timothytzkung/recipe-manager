@@ -1,31 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { HomeView, DetailsView, AddRecipeView } from './views'
 import { Navbar } from "./components/Navbar"
+
 
 function App() {
   // States
   const [currentView, setCurrentView] = useState("Home");
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipeId, setSelectedRecipeId] = useState(0);
+  const [id, setId] = useState(0) // Index counting for recipes
 
   const addRecipe = (recipe) => {
     setRecipes([...recipes, recipe]);
+    console.log("Recipe Submitted!")
   }
-
-  // Example recipe obj; time in mins
-  const sampleRecipe = {
-    name: "Ham Sandwich",
-    prepTime: 20,
-    cookTime: 10,
-    serves: 2,
-    ingredients: [
-      "bread", "ham", "cheese"
-    ],
-    instructions: "",
-    tags: []
-  }
-
 
   return (
     <>
@@ -33,10 +22,10 @@ function App() {
       <Navbar setView={setCurrentView} />
       
       {currentView === "Home" && (
-        <HomeView />
+        <HomeView recipes={recipes}/>
       )}
       {currentView === "AddRecipe" && (
-        <AddRecipeView />
+        <AddRecipeView onRecipeAdd={addRecipe} setView={setCurrentView} id={id} setId={setId}/>
       )}
 
     </div>

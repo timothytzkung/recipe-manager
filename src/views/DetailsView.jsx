@@ -1,6 +1,6 @@
+import { Card } from "../components/Card";
 
-
-export const DetailsView = () => {
+export const DetailsView = ( { recipes } ) => {
     return (
         <>
         <div>
