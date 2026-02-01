@@ -8,7 +8,7 @@ function App() {
   // States
   const [currentView, setCurrentView] = useState("Home");
   const [recipes, setRecipes] = useState([]);
-  const [selectedRecipeId, setSelectedRecipeId] = useState(0);
+  const [selectedRecipeId, setSelectedRecipeId] = useState(0); // Index selector
   const [id, setId] = useState(0) // Index counting for recipes
 
   const addRecipe = (recipe) => {
@@ -22,10 +22,13 @@ function App() {
       <Navbar setView={setCurrentView} />
       
       {currentView === "Home" && (
-        <HomeView recipes={recipes}/>
+        <HomeView recipes={recipes} setView={setCurrentView} setSelectedRecipeId={setSelectedRecipeId}/>
       )}
       {currentView === "AddRecipe" && (
         <AddRecipeView onRecipeAdd={addRecipe} setView={setCurrentView} id={id} setId={setId}/>
+      )}
+      {currentView === "Details" && (
+        <DetailsView recipe={recipes[selectedRecipeId]} setView={setCurrentView}/>
       )}
 
     </div>

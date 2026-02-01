@@ -1,8 +1,13 @@
 
 
-export const Card = ({recipe}) => {
+export const Card = ({ recipe, setView, setSelectedRecipeId }) => {
 
     const {id, name, servings, prepTime, cookTime, ...rest} = recipe;
+
+    const handleSeeRecipe = () => {
+        setSelectedRecipeId(recipe.id);
+        setView("Details")
+    }
 
     return (
         <>
@@ -11,6 +16,7 @@ export const Card = ({recipe}) => {
                 <p>Prep Time: {prepTime} min</p>
                 <p>CookTime: {cookTime} min</p>
                 <p>Serves: {servings}</p>
+                <button onClick={handleSeeRecipe}>See Recipe</button>
             </div>
         </>
     )
