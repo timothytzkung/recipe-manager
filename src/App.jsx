@@ -11,11 +11,13 @@ function App() {
   const [selectedRecipeId, setSelectedRecipeId] = useState(0); // Index selector
   const [id, setId] = useState(0) // Index counting for recipes
 
+  // add recipe handler
   const addRecipe = (recipe) => {
     setRecipes([...recipes, recipe]);
     console.log("Recipe Submitted!")
   }
 
+  // jsx
   return (
     <>
     <div>
@@ -28,7 +30,7 @@ function App() {
         <AddRecipeView onRecipeAdd={addRecipe} setView={setCurrentView} id={id} setId={setId}/>
       )}
       {currentView === "Details" && (
-        <DetailsView recipe={recipes[selectedRecipeId]} setView={setCurrentView}/>
+        <DetailsView recipes={recipes} selectedRecipeId={selectedRecipeId} setView={setCurrentView}/>
       )}
 
     </div>

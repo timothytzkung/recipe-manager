@@ -2,13 +2,16 @@
 
 export const Card = ({ recipe, setView, setSelectedRecipeId }) => {
 
+    // Destructure for props
     const {id, name, servings, prepTime, cookTime, ...rest} = recipe;
 
+    // Handles id selection and rerouting
     const handleSeeRecipe = () => {
         setSelectedRecipeId(recipe.id);
         setView("Details")
     }
 
+    // jsx component
     return (
         <>
             <div className="card">

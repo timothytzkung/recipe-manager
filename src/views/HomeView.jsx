@@ -3,8 +3,7 @@ import { RecipeList } from "../components/RecipeList"
 
 export const HomeView = ( { recipes, setView, setSelectedRecipeId } ) => {
 
-    console.log("Heres the recipe: ", recipes)
-
+    // JSX component
     return (
         <>
         <div>

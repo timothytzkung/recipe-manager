@@ -1,7 +1,7 @@
 
 
 export const Navbar = ( { setView } ) => {
-    
+    // Navbar component
     return (
         <>
         <div className="navbar">
