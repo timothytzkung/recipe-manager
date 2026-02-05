@@ -57,7 +57,8 @@ export const DetailsView = ({ recipes, selectedRecipeId, setView }) => {
     // Jsx component
     return (
         <>
-            {<DetailsComponent /> || 
+        {/* renders details component iif recipe is not null*/}
+            { recipe ? <DetailsComponent /> : 
             <NoRecipeComponent />
             }
         </>
